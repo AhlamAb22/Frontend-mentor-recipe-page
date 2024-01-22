@@ -248,10 +248,21 @@ td {
 /* ###large screens */
 
 @media (min-width: 27rem) {
-  .recipe {
-    padding: 40px;
+  body{
+    background-color: var(--Eggshell);
+    display: grid;
+    align-items: center;
+    justify-content: center;
   }
 
+  .recipe {
+    padding: 40px;
+    max-width: 46rem;
+    background-color: var(--White);
+    margin: 40px;
+    border-radius: 24px;
+  }
+  
   .recipe__img {
     width: 100%;
     border-radius: 24px;
