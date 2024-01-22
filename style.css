@@ -1,0 +1,260 @@
+/* css reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* end of css reset */
+
+/* ###attribution style */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ###end of attribution style */
+
+:root {
+  /* ### Primary */
+
+  --Nutmeg: hsl(14, 45%, 36%);
+  --Dark-Raspberry: hsl(332, 51%, 32%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Rose-White: hsl(330, 100%, 98%);
+  --Eggshell: hsl(30, 54%, 90%);
+  --Light-Grey: hsl(30, 18%, 87%);
+  --Wenge-Brown: hsl(30, 10%, 34%);
+  --Dark-Charcoal: hsl(24, 5%, 18%);
+
+  /* ### fonts */
+  --heading-ff: 'Young Serif', serif;
+  --content-ff: 'Outfit', sans-serif;
+
+  --regular--fw: 400;
+  --semibold-fw: 600;
+  --bold-fw: 700;
+}
+
+hr {
+  border: .5px solid var(--Light-Grey);
+  margin: 0;
+}
+
+bold {
+  font-weight: var(--bold-fw);
+}
+
+/* ###phone screen size */
+
+/* ### any wrapper style */
+.wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+
+.recipe__container {
+  padding: 40px 32px;
+  display: grid;
+  gap: 2rem;
+}
+
+.recipe__name {
+  font-family: var(--heading-ff);
+  font-size: 2.25rem;
+}
+
+.heading-two {
+  font-family: var(--heading-ff);
+  color: var(--Nutmeg);
+  font-size: 1.75rem;
+}
+
+.heading-three {
+  color: var(--Dark-Raspberry);
+  font-family: var(--content-ff);
+  font-size: 1.25rem;
+}
+
+.paragraph {
+  font-family: var(--content-ff);
+  font-size: 1rem;
+  color: var(--Wenge-Brown);
+}
+
+
+/* ###preparation */
+.recipe__preparation-time {
+  background-color: var(--Rose-White);
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Preparation-time-list {
+  display: grid;
+  gap: .5rem;
+}
+
+/* ###end of preparation section */
+
+
+
+/* ###nutrition */
+
+td {
+  border-bottom: .5px solid var(--Light-Grey);
+  padding: 8px;
+  text-align: left;
+}
+
+.nutritional-value {
+  font-size: 1rem;
+  color: var(--Nutmeg);
+  font-weight: var(--bold-fw);
+  font-family: var(--content-ff);
+}
+
+/* ###end of nutrition section */
+
+
+
+/* ###lists */
+.unordered-list,
+.ordered-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style the list items */
+.unordered-list__item,
+.ordered-list__item {
+  padding-left: 20px;
+  position: relative;
+}
+
+
+.unordered-list__item::before {
+  content: '\2022';
+  /* Unicode character for a bullet (dot) */
+  color: var(--Nutmeg);
+  position: absolute;
+  left: 0;
+  right: 16px;
+  height: 4px;
+  width: 4px;
+}
+
+.ordered-list__item::before {
+  content: counter(item) '.';
+  color: var(--Nutmeg);
+  font-weight: var(--bold-fw);
+  position: absolute;
+  left: 0;
+  left: -16px;
+}
+
+/* Increment the counter for each ordered list item */
+.ordered-list {
+  counter-reset: item;
+}
+
+.ordered-list__item {
+  counter-increment: item;
+  padding-left: 16px;
+}
+
+/* ###end of list styling */
+
+/* ###large screens */
+
+@media (min-width: 27rem) {
+  .recipe {
+    padding: 40px;
+  }
+
+  .recipe__img {
+    width: 100%;
+    border-radius: 24px;
+    max-height: 38.75rem;
+  }
+}
