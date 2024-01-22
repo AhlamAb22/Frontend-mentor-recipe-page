@@ -280,6 +280,7 @@ ol li:not(:last-child) {
     background-color: var(--White);
     margin: 40px;
     border-radius: 24px;
+    max-height: 106.75rem
   }
 
   .recipe__img {
