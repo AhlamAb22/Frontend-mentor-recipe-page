@@ -88,6 +88,17 @@ select {
 
 /* ###end of attribution style */
 
+/* ###visually hidden */
+  .visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
 :root {
   /* ### Primary */
 
@@ -125,8 +136,8 @@ bold {
 
 /* ### any wrapper style */
 .wrapper {
-  display: grid;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -138,7 +149,9 @@ bold {
 
 .recipe__name {
   font-family: var(--heading-ff);
+  color: var(--Dark-Charcoal);
   font-size: 2.25rem;
+  font-weight: var(--regular--fw);
 }
 
 .heading-two {
@@ -167,7 +180,7 @@ bold {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .Preparation-time-list {
@@ -212,6 +225,11 @@ td {
   position: relative;
 }
 
+ul li:not(:last-child),
+ol li:not(:last-child) {
+  margin-bottom: 8px; /* Set the bottom margin between list items */
+}
+
 
 .unordered-list__item::before {
   content: '\2022';
@@ -248,6 +266,7 @@ td {
 /* ###large screens */
 
 @media (min-width: 27rem) {
+
   body{
     background-color: var(--Eggshell);
     display: grid;
@@ -256,13 +275,13 @@ td {
   }
 
   .recipe {
-    padding: 40px;
+    padding: 20px;
     max-width: 46rem;
     background-color: var(--White);
     margin: 40px;
     border-radius: 24px;
   }
-  
+
   .recipe__img {
     width: 100%;
     border-radius: 24px;
