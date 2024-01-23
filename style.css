@@ -272,6 +272,7 @@ ol li:not(:last-child) {
     display: grid;
     align-items: center;
     justify-content: center;
+    height: 100vh;
   }
 
   .recipe {
@@ -281,7 +282,6 @@ ol li:not(:last-child) {
     margin: 40px;
     border-radius: 24px;
     max-height: 106.75rem
-    margin-top: 70px;
   }
 
   .recipe__img {
