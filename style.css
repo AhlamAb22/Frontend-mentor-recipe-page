@@ -99,6 +99,8 @@ select {
     width: 1px;
 }
 
+
+
 :root {
   /* ### Primary */
 
@@ -144,7 +146,7 @@ bold {
 .recipe__container {
   padding: 40px 32px;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .recipe__name {
@@ -272,7 +274,6 @@ ol li:not(:last-child) {
     display: grid;
     align-items: center;
     justify-content: center;
-    height: 100vh;
   }
 
   .recipe {
