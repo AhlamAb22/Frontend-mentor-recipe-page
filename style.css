@@ -130,7 +130,7 @@ hr {
   margin: 0;
 }
 
-bold {
+strong {
   font-weight: var(--bold-fw);
 }
 
@@ -160,6 +160,7 @@ bold {
   font-family: var(--heading-ff);
   color: var(--Nutmeg);
   font-size: 1.75rem;
+  font-weight: var(--regular--fw);
 }
 
 .heading-three {
@@ -196,10 +197,12 @@ bold {
 
 /* ###nutrition */
 
-td {
+td,
+th {
   border-bottom: .5px solid var(--Light-Grey);
   padding: 8px;
   text-align: left;
+  font-weight: var(--regular--fw);
 }
 
 .nutritional-value {
@@ -214,10 +217,9 @@ td {
 
 
 /* ###lists */
-.unordered-list,
-.ordered-list {
-  list-style: none;
-  padding: 0;
+li::marker{
+  color: var(--Nutmeg);
+  font-weight: var(--bold-fw);
 }
 
 /* Style the list items */
@@ -232,38 +234,6 @@ ol li:not(:last-child) {
   margin-bottom: 8px; /* Set the bottom margin between list items */
 }
 
-
-.unordered-list__item::before {
-  content: '\2022';
-  /* Unicode character for a bullet (dot) */
-  color: var(--Nutmeg);
-  position: absolute;
-  left: 0;
-  right: 16px;
-  height: 4px;
-  width: 4px;
-}
-
-.ordered-list__item::before {
-  content: counter(item) '.';
-  color: var(--Nutmeg);
-  font-weight: var(--bold-fw);
-  position: absolute;
-  left: 0;
-  left: -16px;
-}
-
-/* Increment the counter for each ordered list item */
-.ordered-list {
-  counter-reset: item;
-}
-
-.ordered-list__item {
-  counter-increment: item;
-  padding-left: 16px;
-}
-
-/* ###end of list styling */
 
 /* ###large screens */
 
